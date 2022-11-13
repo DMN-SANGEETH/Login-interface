@@ -78,7 +78,7 @@ const BackImage = styled.div`
 background-image:url('./img/image01.png');
 width:100%;
 height:100vh;
-position:relative;
+position:absolute;
 padding:0.5%;
 display:flex;
 align-items:center;
