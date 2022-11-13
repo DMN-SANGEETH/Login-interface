@@ -13,7 +13,7 @@ const Login = () => {
         // const user = userCredential.user;
         // // ...
         // console.log(user);
-        onsole.log('User sign ind');
+        console.log('User sign ind');
         })
         .catch((error) => {
         //const errorCode = error.code;
