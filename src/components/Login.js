@@ -31,28 +31,33 @@ const Login = () => {
     return (
     <LoginConteiner>
         <BackImage>
-        <img src = './img/image01.png' alt='background'/>
-        </BackImage>
-        <BlogImage>
-            <img src='./img/images02.jpeg' alt='blogimage' />
-        </BlogImage>
-        <LogiDitails>
-            <img src='./img/download.png' alt= "logimag"/>
-            <input type='text' placeholder='username' value={username} 
-            onChange={e=>{
-                e.preventDefault();
-                setUsername(e.target.value);
-            }}/>
-            <input type='password' placeholder="password" value={password}
-            onChange={e=>{
-                e.preventDefault();
-                setPassword(e.target.value);
-            }}/>
-            < a href='/'>forget password</a>
-            <LoginButton onClick={userSignin}
-            >Log in</LoginButton>
         
+        
+        {/* <BlogImage>
+            <img src='./img/images02.jpeg' alt='blogimage' />
+        </BlogImage> */}
+            <LogiDitails>
+                <img src='./img/download.png' alt= "logimag"/>
+                <Body>
+                <input type='text' placeholder='username' value={username} 
+                onChange={e=>{
+                    e.preventDefault();
+                    setUsername(e.target.value);
+                }}/>
+                <input type='password' placeholder="password" value={password}
+                onChange={e=>{
+                    e.preventDefault();
+                    setPassword(e.target.value);
+                }}/>
+                < a href='/'>forget password</a>
+                <LoginButton onClick={userSignin}
+                >Log in</LoginButton>
+
+                </Body>
+
+            
         </LogiDitails>
+        </BackImage>
 
 
         
@@ -66,23 +71,42 @@ export default Login;
 
 const LoginConteiner = styled.div`
 overflow:hidden;
+
 `;
 
 const BackImage = styled.div`
- position:fixed;
- top:0;
- bottom:o;
- width:100vw;
- height:100vh;
- z-index:-1;
+background-image:url('./img/image01.png');
+width:100%;
+height:100vh;
+position:relative;
+padding:0.5%;
+display:flex;
+align-items:center;
+justify-content:center;
+background-size: cover;
+background-repeat: no-repeat;
+z-index:-1;
+
 `;
 
-const BlogImage = styled.div`
+// const BlogImage = styled.div`
 
-`;
+// `;
 const LogiDitails = styled.div`
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:gray;
+border-radius: 10px;
+
 
 `;
 const LoginButton = styled.button`
+
+`;
+const Body = styled.div`
+text-align:center;
+padding:0 0 20px 0;
 
 `;
