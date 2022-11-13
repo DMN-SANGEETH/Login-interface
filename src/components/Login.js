@@ -1,25 +1,11 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import styled from 'styled-components';
-import { auth } from './firebase/firebase';
+import auth from './firebase/firebase';
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-//     const userSignin = (e)=> {
-//         signInWithEmailAndPassword(auth, username, password)
-//             .then((userCredential) => {
-//                 // Signed in 
-//                 const user = userCredential.user;
-//                 // ...
-//                 console.log(user);
-//             })
-//             .catch((error) => {
-//                 //const errorCode = error.code;
-//                 const errorMessage = error.message;
-//                 console.log(errorMessage);
-//             });
-//     };
     const userSignin = ()=>{
         signInWithEmailAndPassword(auth, username, password)
         .then((userCredential) => {
