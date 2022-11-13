@@ -10,9 +10,10 @@ const Login = () => {
         signInWithEmailAndPassword(auth, username, password)
         .then((userCredential) => {
         // Signed in 
-        const user = userCredential.user;
-        // ...
-        console.log(user);
+        // const user = userCredential.user;
+        // // ...
+        // console.log(user);
+        onsole.log('User sign ind');
         })
         .catch((error) => {
         //const errorCode = error.code;

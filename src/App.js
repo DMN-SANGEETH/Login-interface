@@ -1,4 +1,4 @@
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import auth from "./components/firebase/firebase";
 import Login from "./components/Login";
@@ -17,10 +17,11 @@ function App() {
           const uid = user.uid;
           // ...
           console.log(uid);
-          setIsuser(true);
+          setIsuser(true); 
         } else {
           // User is signed out
           // ...
+          setIsuser(false);
         }
       });
 
@@ -36,7 +37,17 @@ function App() {
   return (
     <div>
       {!isuser&&(<Login />)}
-      {isuser&&<div>We have user</div>}
+      
+      {isuser&&<div>We have user
+        <button onClick={()=>{
+          signOut(auth).then(() => {
+            // Sign-out successful.
+            alert ('User is sign out!'); 
+          }).catch ((error) => {
+            // An error happened.
+          }); 
+        }}>Sing out</button>
+        </div>}
       
     </div>
   );
